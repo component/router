@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "route-component": "0.1.0"
+    "route-component": "0.2.0"
   },
   "devDependencies": {
     "mocha": "*",

@@ -26,28 +26,28 @@ function Router() {
 }
 
 /**
- * Create route `path` with optional `setup`
- * and `teardown` callbacks. If you omit these
+ * Create route `path` with optional `before`
+ * and `after` callbacks. If you omit these
  * they may be added later with the `Route` returned.
  *
  *   router.get('/user/:id', showUser, hideUser);
  *
  *   router.get('/user/:id')
- *     .setup(showUser)
- *     .teardown(hideUser)
+ *     .before(showUser)
+ *     .after(hideUser)
  *
  * @param {String} path
- * @param {Function} setup
- * @param {Function} teardown
+ * @param {Function} before
+ * @param {Function} after
  * @return {Route}
  * @api public
  */
 
-Router.prototype.get = function(path, setup, teardown){
+Router.prototype.get = function(path, before, after){
   var route = new Route(path);
   this.routes.push(route);
-  if (setup) route.setup(setup);
-  if (teardown) route.teardown(teardown);
+  if (before) route.before(before);
+  if (after) route.after(after);
   return route;
 };
 
@@ -67,7 +67,7 @@ Router.prototype.dispatch = function(path){
     if (ret = route.match(path)) {
       this.route = route;
       this.args = ret.args;
-      route.callbacks.setup.apply(null, ret.args);
+      route.call('before', ret.args);
     }
   }
 };
@@ -80,6 +80,6 @@ Router.prototype.dispatch = function(path){
 
 Router.prototype.teardown = function(){
   var route = this.route;
-  if (!route || !route.callbacks.teardown) return;
-  route.callbacks.teardown.apply(null, this.args);
+  if (!route) return;
+  route.call('after', this.args);
 };
