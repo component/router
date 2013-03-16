@@ -2,10 +2,10 @@
   "name": "router-component",
   "repo": "component/router",
   "description": "Simple client-side router",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "route-component": "0.0.2"
+    "route-component": "0.1.0"
   },
   "devDependencies": {
     "mocha": "*",
