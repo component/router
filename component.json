@@ -1,0 +1,13 @@
+{
+  "name": "router",
+  "repo": "component/router",
+  "description": "Simple client-side router",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}
