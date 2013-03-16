@@ -13,6 +13,16 @@ function Route(path) {
   this.regexp = toRegexp(path, this.keys);
 }
 
+Route.prototype.setup = function(fn){
+  this._setup = fn;
+  return this;
+};
+
+Route.prototype.teardown = function(fn){
+  this._teardown = fn;
+  return this;
+};
+
 Route.prototype.matches = function(path){
   var keys = this.keys;
   var qsIndex = path.indexOf('?');
