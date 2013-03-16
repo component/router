@@ -20,3 +20,20 @@ describe('Router#get(path, setup, teardown)', function(){
     assert(teardown == route.callbacks.teardown);
   })
 })
+
+describe('Router#dispatch(path)', function(){
+  it('should invoke the first matching route', function(done){
+    var router = new Router;
+
+    router.get('/user', function(){
+      assert(false && 'should not be invoked');
+    });
+
+    router.get('/user/:id', function(id){
+      assert('5' == id);
+      done();
+    });
+
+    router.dispatch('/user/5');
+  })
+})

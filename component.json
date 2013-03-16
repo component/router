@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "keywords": ["router", "route", "routing"],
   "dependencies": {
-    "component/route": "*"
+    "component/route": "0.0.2"
   },
   "development": {},
   "license": "MIT",

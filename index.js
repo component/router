@@ -50,3 +50,13 @@ Router.prototype.get = function(path, setup, teardown){
   if (teardown) route.teardown(teardown);
   return route;
 };
+
+Router.prototype.dispatch = function(path){
+  var ret;
+  for (var i = 0; i < this.routes.length; i++) {
+    var route = this.routes[i];
+    if (ret = route.match(path)) {
+      route.callbacks.setup.apply(null, ret);
+    }
+  }
+};
