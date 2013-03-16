@@ -61,10 +61,25 @@ Router.prototype.get = function(path, setup, teardown){
 
 Router.prototype.dispatch = function(path){
   var ret;
+  this.teardown();
   for (var i = 0; i < this.routes.length; i++) {
     var route = this.routes[i];
     if (ret = route.match(path)) {
+      this.route = route;
+      this.args = ret.args;
       route.callbacks.setup.apply(null, ret.args);
     }
   }
+};
+
+/**
+ * Invoke teardown callbacks of previous route.
+ *
+ * @api private
+ */
+
+Router.prototype.teardown = function(){
+  var route = this.route;
+  if (!route || !route.callbacks.teardown) return;
+  route.callbacks.teardown.apply(null, this.args);
 };
