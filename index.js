@@ -56,7 +56,7 @@ Router.prototype.dispatch = function(path){
   for (var i = 0; i < this.routes.length; i++) {
     var route = this.routes[i];
     if (ret = route.match(path)) {
-      route.callbacks.setup.apply(null, ret);
+      route.callbacks.setup.apply(null, ret.args);
     }
   }
 };
