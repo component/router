@@ -51,6 +51,14 @@ Router.prototype.get = function(path, setup, teardown){
   return route;
 };
 
+/**
+ * Dispatch the given `path`, matching routes
+ * sequentially.
+ *
+ * @param {String} path
+ * @api public
+ */
+
 Router.prototype.dispatch = function(path){
   var ret;
   for (var i = 0; i < this.routes.length; i++) {
