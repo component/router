@@ -68,6 +68,7 @@ Router.prototype.dispatch = function(path){
       this.route = route;
       this.args = ret.args;
       route.call('before', ret.args);
+      break;
     }
   }
 };
