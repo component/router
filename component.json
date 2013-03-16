@@ -1,10 +1,12 @@
 {
   "name": "router",
   "repo": "component/router",
-  "description": "Simple client-side router",
+  "description": "Simple and flexible client-side router",
   "version": "0.0.1",
-  "keywords": [],
-  "dependencies": {},
+  "keywords": ["router", "route", "routing"],
+  "dependencies": {
+    "component/route": "*"
+  },
   "development": {},
   "license": "MIT",
   "scripts": [

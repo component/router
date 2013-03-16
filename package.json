@@ -1,11 +1,11 @@
 {
-  "name": "router",
+  "name": "router-component",
   "repo": "component/router",
   "description": "Simple client-side router",
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "path-to-regexp": "0.0.2"
+    "route-component": "*"
   },
   "devDependencies": {
     "mocha": "*",

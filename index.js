@@ -3,7 +3,11 @@
  * Module dependencies.
  */
 
-var Route = require('./route');
+try {
+  var Route = require('route-component');
+} catch (err) {
+  var Route = require('route');
+}
 
 module.exports = Router;
 
