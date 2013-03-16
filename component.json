@@ -2,7 +2,7 @@
   "name": "router",
   "repo": "component/router",
   "description": "Simple and flexible client-side router",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "keywords": ["router", "route", "routing"],
   "dependencies": {
     "component/route": "0.0.2"
