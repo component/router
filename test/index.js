@@ -29,11 +29,12 @@ describe('Router#dispatch(path)', function(){
       assert(false && 'should not be invoked');
     });
 
-    router.get('/user/:id', function(id){
+    router.get('/user/:id/:page', function(id, page){
       assert('5' == id);
+      assert('posts' == page);
       done();
     });
 
-    router.dispatch('/user/5');
+    router.dispatch('/user/5/posts');
   })
 })
