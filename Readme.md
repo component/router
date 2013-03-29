@@ -12,7 +12,7 @@
   Example with only setup callbacks:
 
 ```js
-var Router = require('component/router');
+var Router = require('router');
 
 var router = new Router;
 
@@ -27,7 +27,7 @@ router.dispatch('/user/2');
   events etc:
 
 ```js
-var Router = require('component/router');
+var Router = require('router');
 
 var router = new Router;
 
@@ -45,7 +45,7 @@ router.dispatch('/user/10');
   Fluent api equivalent of above:
 
 ```js
-var Router = require('component/router');
+var Router = require('router');
 
 var router = new Router;
 
