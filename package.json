@@ -14,5 +14,9 @@
   "license": "MIT",
   "scripts": [
     "index.js"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/component/router.git"
+  }
 }
