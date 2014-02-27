@@ -5,11 +5,15 @@
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "route-component": "0.2.0"
+    "route-component": "0.2.0",
+    "remove-catch-require": "0.0.0"
   },
   "devDependencies": {
     "mocha": "*",
     "better-assert": "*"
+  },
+  "browserify": {
+    "transform": ["remove-catch-require"]
   },
   "license": "MIT",
   "scripts": [
